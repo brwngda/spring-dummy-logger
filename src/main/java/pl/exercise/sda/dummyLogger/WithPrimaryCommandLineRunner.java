@@ -1,4 +1,4 @@
-package pl.exercise.sda;
+package pl.exercise.sda.dummyLogger;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
@@ -6,12 +6,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class CommandLineRunnerWithConstructorInjection implements CommandLineRunner {
+class WithPrimaryCommandLineRunner implements CommandLineRunner {
 
-    private DummyLogger dummyLogger;
+    private final DummyLogger dummyLogger;
 
     @Override
-    public void run(final String... args) throws Exception {
+    public void run(String... args) throws Exception {
         dummyLogger.sayHello();
     }
 }
